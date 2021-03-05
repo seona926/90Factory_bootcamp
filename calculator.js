@@ -1,4 +1,11 @@
+let numbers = []
+numbers = prompt("연산할 계산식을 공백 없이 입력해주세요. (ex. 6+3)").split("");
+
+let firstNumber = 0;
+let secondNumber = 0;
+let index = 0;
 let result = 0;
+
 function add (firstNumber, secondNumber) {
     result = firstNumber + secondNumber;
     return console.log(result);
@@ -18,13 +25,6 @@ function divide (firstNumber, secondNumber) {
     result = firstNumber / secondNumber;
     return console.log(result);
 }
-
-let numbers = []
-numbers = prompt("연산할 값을 공백 없이 입력해주세요.").split("");
-
-let firstNumber = 0;
-let secondNumber = 0;
-let index = 0;
 
 if (numbers.includes('+')) {
     setNumbers('+');

@@ -1,6 +1,8 @@
 let input = '';
+let arrayItems = [];
+let newItem = [];
 do {
-    input = prompt('제품을 입력하세요');
+    input = prompt('제품을 입력하세요').toLowerCase();
     makeSerialNumber(input);
 } while(input !== 'q');
 
@@ -11,8 +13,7 @@ function numberPad(n, width) {
     return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
 }
 
-let arrayItems = [];
-let newItem = [];
+
 // item 오브젝트 생성
 function Items(item, letters, count) {
     this.item = item;
@@ -49,3 +50,4 @@ function makeSerialNumber(inputObject) {
         console.log(serialNumber);
     }
 }
+
