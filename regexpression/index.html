@@ -7,30 +7,36 @@
     <script src="regexpression.js"></script>
 
     <title>Document</title>
-
     <style>
         #identification {
+            height: 100px;
             width: 200px;
-            height: 20px;
-            margin: 5px 5px 10px 5px;
-            border: 1px solid grey;
-            border-radius: 3px;
-            box-shadow: 2px 2px 2px grey;
+        }
+        
+        .container {
+            margin: 30px;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 8px;
+            width: 260px;
         }
 
         #submit-btn {
-            width: 50px;
-            height: 25px;
-            border: 1px solid grey;
-            border-radius: 3px;
-            box-shadow: 2px 2px 2px grey;
+            margin-bottom: 10px;
+        }
+
+        #result {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <h3>주민등록번호를 - 없이 입력하세요</h3>
-    <input id="identification"></input>
-    <button id="submit-btn" onclick="fcnOnclick();">확인</button>
-    <div id="result">주민등록번호: </div>
+    <div class="container">
+        <h3>문자열을 입력하세요🤗</h3>
+        <textarea id="identification"></textarea>
+        <button id="submit-btn" onclick="fcnOnclick();">확인</button>
+        <div id="result">주민등록번호: </div>
+    </div>
+    
 </body>
 </html>
