@@ -23,7 +23,12 @@ function multiply (firstNumber, secondNumber) {
 
 function divide (firstNumber, secondNumber) {
     result = firstNumber / secondNumber;
-    return console.log(result);
+    return console.log(result.toFixed(4));
+}
+
+function remainder (firstNumber, secondNumber) {
+    result = firstNumber % secondNumber;
+    return console.log(result.toFixed(4));
 }
 
 if (numbers.includes('+')) {
@@ -35,9 +40,12 @@ if (numbers.includes('+')) {
 } else if (numbers.includes('*')) {
     setNumbers('*');
     multiply(firstNumber, secondNumber);
-} else {
+} else if (numbers.includes('/')) {
     setNumbers('/');
     divide(firstNumber, secondNumber);
+} else {
+    setNumbers('%');
+    remainder(firstNumber, secondNumber);
 }
 
 function setNumbers(operator) {
