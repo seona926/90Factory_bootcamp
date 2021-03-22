@@ -26,6 +26,7 @@
 .modal_content {
     background-color: white;
     padding: 80px 80px;
+    font-size: 20px;
     text-align: center;
     position: relative;
     width: 20%;
@@ -39,7 +40,7 @@ h1{
     
 }
 
-.modal_content>button {
+.modal_content > button {
     background-color: rgb(202, 137, 221);
     margin-top:40px;
     font-weight:600;
@@ -47,4 +48,34 @@ h1{
 
 .hidden {
     display: none;
+}
+
+.modal-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 100px;
+    min-height: 80vh;
+}
+
+/* button */
+.modal-button-container > button, .modal_content > button {
+    all: unset;
+    background-color: rgb(37, 173, 151);
+    color: white;
+    font-weight:600;
+    padding: 5px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: inset 0 0 0 0 #d8225f;
+    transition: ease-out 0.3s;
+    font-size: 1.5rem;
+    outline: none;
+}
+
+/* button:hover */
+.modal-button-container > button:hover, .modal_content > button:hover {
+    box-shadow: inset 300px 0 0 0 #d8225f;
 }

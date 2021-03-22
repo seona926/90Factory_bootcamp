@@ -9,18 +9,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="modal-button-container">
         <div class="out-text">모달창 띄우기🎈</div>
         <button id="open">Click Me!</button>
     </div>
-    <div class="modal hidden">
-        <div class="modal_bg"></div>
-        <div class="modal_content">
-            <h1>Hello World!!</h1>
-            <button>Close</button>
-        </div>
-    </div>
-
-    <script src="./modal_library.js"></script>
 </body>
 </html>
+
+<script type="text/javascript" src='./modal_library.js'></script> 
+<script>
+    makeModal('modal', 'This is the first modal I made!✌');
+</script>
+
+
