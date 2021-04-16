@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+html { 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Comfortaa', cursive;
+  }
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url('32074.jpg');
+    background-size: cover;
+    min-height:100%; 
+}
+
+.welcome-container{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inner-box {
+    width: 100%;
+    height: 30rem;
+    background-color: rgba(58, 58, 58, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.welcome-text {
+    color: rgb(255, 255, 255);
+    font-size: 7rem;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 5vh;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+#input-car-number,
+#input-car-number-out {
+    height: 4vh;
+    border-radius: 10px;
+}
+
+.car-number-container {
+    text-align: left;
+}
+
+.start-parking, 
+.stop-parking,
+#buy-season-ticket,
+#payment {
+    height: 4.5vh;
+    border-radius: 10px;
+    margin: 0.2rem;
+    font-weight: 700;
+    font-family:'Nanum Gothic Coding', monospace;
+}
+
+.payment-btns {
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+}

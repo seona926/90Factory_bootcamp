@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/css/payment.css">
+
+
+    <title>Payment</title>
+</head>
+<header>
+    <base href="/" />
+</header>
+<body>
+    <div class="payment-container">
+        <div class="header">💳Payment</div>
+        <div class="information-container">
+            <div class="information">
+                ◽ 차량 번호 <%= carNumber %><br>
+                ◽ 주차 시간 <%= time %><br>
+                ◽ 총 금액 <span id="total-price"><%= totalprice %></span>
+                <hr>
+                <div class="discount-container">
+                    ◽ 할인 방법 
+                    <select id="discount-select" onchange="selectDiscount()">
+                        <option selected>할인 방법을 선택해주세요!</option>
+                        <option>없음</option>
+                        <option>영화티켓</option>
+                        <option>저공해차량</option>
+                    </select><br>
+                </div>
+                <hr>
+                <div class="final-amount">◽ 최종 금액 <a id="final-amount"></a></div>
+                <hr>
+                ◽ 결제 방법
+                <select id="payment-select" onchange="selectPayment()">
+                    <option selected>결제 수단을 선택해주세요!</option>
+                    <option>현금</option>
+                    <option>카드</option>    
+                    <option>삼성페이</option>
+                </select><br>
+                ◽ 현금&nbsp;<span id="cash"></span><br>
+                ◽ 거스름돈&nbsp;<span id="change"></span><br>
+                <button class="payment-btn">결제하기</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function selectDiscount() {
+            let totalprice = $('#total-price').text();
+            let finalPrice = 0;
+            console.log('total: ' , totalprice);
+            if ($('#discount-select option:selected').val() === "영화티켓"){
+                finalPrice = totalprice - 5000
+                if (totalprice <= 5000) {
+                    finalPrice = 0;
+                }
+            } else if ($('#discount-select option:selected').val() === "저공해차량"){
+                finalPrice = totalprice / 2;
+            } else if ($('#discount-select option:selected').val() === "없음"){
+                finalPrice = totalprice;
+            }
+            $('#final-amount').val(finalPrice);
+            $('#final-amount').html(finalPrice);
+        }
+
+        function selectPayment() { 
+            if ($('#payment-select option:selected').val() === "현금") {
+                $('#cash').html(`<input id="cash-amount"></input><button id="send-cash-btn" onclick="showChange()">확인</button>`);
+            } else if ($('#payment-select option:selected').val() === "카드" || $('#payment-select option:selected').val() === "삼성페이") {
+                $('#cash').html('');
+                $('#change').html('');
+            }
+        }
+
+        function showChange() {
+        console.log("final-amount:", $('#final-amount').val())
+        console.log("cash-amount:",$('#cash-amount').val());
+        let change = $('#cash-amount').val() - $('#final-amount').val();
+        if (Number($('#cash-amount').val()) >= Number($('#final-amount').val())) {
+            $('#change').html(change)
+            $('#payment-btn').prop("disabled", false);
+        } else if (Number($('#cash-amount').val()) < Number($('#final-amount').val())){
+            console.log("현금 부족");
+            $('#change').html('현금을 더 넣어주세요')
+            $('#payment-btn').prop("disabled", true);
+            }
+        }
+
+    </script>
+    <script src="/js/payment.js"></script>
+</body>
+</html>

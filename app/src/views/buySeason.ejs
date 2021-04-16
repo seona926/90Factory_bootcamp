@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/buyseason.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+  <title>Buy Season ticket</title>
+</head>
+<body>
+  <div class="buy-season-container">
+    <div class="inner-box">
+      <div class="title">Season Ticket</div>
+      <div class="options">
+        ◽ 차량 번호 <input class="input-car-number"><br>
+        ◽ 이름 <input class="input-name"><br>
+        ◽ 핸드폰 번호 <input class="input-phone-number"><br>
+        ◽ 기간 선택 
+        <select id="select-period" onchange="showAmount()">
+          <option selected>기간을 선택해주세요!</option>
+          <option>1개월</option>
+          <option>3개월</option>
+          <option>6개월</option>
+        </select><hr>
+        ◽ 최종 금액&nbsp;<a id="final-amount"></a><hr>
+        ◽ 결제 방법
+        <select id="select-payment" onchange="selectPayment()">
+            <option selected>결제 수단을 선택해주세요!</option>
+            <option>현금</option>
+            <option>카드</option>    
+            <option>삼성페이</option>
+        </select><br>
+        ◽ 현금&nbsp;<span id="cash"></span><br>
+        ◽ 거스름돈&nbsp;<span id="change"></span><br>
+        <button id="payment-btn">결제하기</button>
+
+      </div>
+
+
+    </div>
+  </div>
+  <script>
+    function showAmount() {
+      if ($('#select-period option:selected').val() === '1개월') {
+        $('#final-amount').val(100000);
+        $('#final-amount').html(100000);
+      } else if ($('#select-period option:selected').val() === '3개월') {
+        $('#final-amount').val(250000);
+        $('#final-amount').html(250000);
+      } else if ($('#select-period option:selected').val() === '6개월') {
+        $('#final-amount').val(450000);
+        $('#final-amount').html(450000);
+      }
+    }
+
+    function selectPayment() { 
+      if ($('#select-payment option:selected').val() === "현금") {
+          $('#cash').html(`<input id="cash-amount"></input><button id="send-cash-btn" onclick="showChange()">확인</button>`)
+      } else if ($('#select-payment option:selected').val() === "카드" || $('#select-payment option:selected').val() === "삼성페이") {
+        $('#cash').html('');
+        $('#change').html('');
+      }
+    }
+
+    function showChange() {
+      console.log("final-amount:", $('#final-amount').val())
+      console.log("cash-amount:",$('#cash-amount').val());
+      let change = $('#cash-amount').val() - $('#final-amount').val();
+      if (Number($('#cash-amount').val()) >= Number($('#final-amount').val())) {
+        $('#change').html(change)
+        $('#payment-btn').prop("disabled", false);
+      } else if (Number($('#cash-amount').val()) < Number($('#final-amount').val())){
+        console.log("현금 부족");
+        $('#change').html('현금을 더 넣어주세요')
+        $('#payment-btn').prop("disabled", true);
+      }
+    }
+    
+    
+  </script>
+  <script src="/js/buySeason.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+html {
+    font-family: 'Comfortaa', cursive;
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-image: url("27307.jpg");
+    background-size: cover;
+    min-height:100%; 
+}
+
+.payment-container {
+    width: 60rem;
+    height: 55rem;
+    background-color: rgba(128, 128, 128, 0.5);
+    margin: 0 auto;
+    margin: 3rem, 0;
+    font-family:'Nanum Gothic Coding', monospace;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 1px rgba(82, 82, 82, 0.7);
+}
+
+.header {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 30px 20px;
+    text-align: center;
+    height: 6rem;
+    padding: 3rem 0;
+}
+
+.information-container {
+    text-align: start;
+    margin: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family:'Nanum Gothic Coding', monospace;
+    line-height: 2.5rem;
+    color: rgb(255, 255, 255);
+}
+
+.discount-container {
+    margin: 3rem 0;
+}
+
+#discount-select,
+#payment-select,
+#get-cash,
+#send-cash-btn {
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+#cash-amount {
+    height: 1.8rem;
+    border-radius: 0.5rem;
+}
+
+.final-amount {
+    font-size: 2rem;
+    height: 2rem;
+    margin: 4rem 0;
+}
+
+.payment {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family:'Nanum Gothic Coding', monospace;
+    line-height: 2.5rem;
+    color: rgb(255, 255, 255);
+}
+
+.payment-btn {
+    height: 4.5vh;
+    width: 5rem;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+    font-weight: 700;
+    font-family:'Nanum Gothic Coding', monospace;   
+}
