@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+html { 
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Comfortaa', cursive;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-image: url('27307.jpg');
+  background-size: cover;
+  min-height:100%; 
+}
+
+.inner-box {
+  width: 60rem;
+  height: 80vh;
+  background-color: rgba(128, 128, 128, 0.5);
+  margin: 0 auto;
+  margin-top: 5rem;
+  font-family:'Nanum Gothic Coding', monospace;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 1px rgba(82, 82, 82, 0.7);
+}
+
+.title {
+  color: rgb(255, 255, 255);
+  width: 100%;
+  font-size: 7rem;
+  text-align: center;
+  font-weight: 800;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.options {
+  text-align: start;
+  margin: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family:'Nanum Gothic Coding', monospace;
+  line-height: 2.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.input-car-number,
+.input-name,
+.input-phone-number,
+#cash-amount {
+  height: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+#select-period,
+#select-payment,
+#send-cash-btn {
+  height: 2rem;
+  border-radius: 0.5rem;
+}
+
+#payment-btn {
+  height: 4.5vh;
+  width: 5rem;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 3rem;
+  font-weight: 700;
+  font-family:'Nanum Gothic Coding', monospace;   
+}
