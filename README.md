@@ -31,7 +31,7 @@ To run the parking lot settlement system locally, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/90Factory_bootcamp.git
+    git clone https://github.com/seona926/90Factory_bootcamp.git
     cd 90Factory_bootcamp/parkinglot
     ```
 
